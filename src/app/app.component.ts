@@ -5,6 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'app works!';
+  title = 'Bienvenue sur le super annuaire';
+  people = [
+    { firstName: "Misko", lastName: "Hevery", company: "Google" }
+]
 }
+
