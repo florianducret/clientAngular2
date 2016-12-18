@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AnnuaireComponent } from './annuaire/annuaire.component';
+import { AnnuaireService } from "./annuaire.service";
+import { Contact } from './annuaire'
+
 
 @Component({
   selector: 'app-root',
@@ -7,9 +11,15 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Bienvenue sur le super annuaire';
-  people = [
-    { firstName: "Misko", lastName: "Hevery", company: "Google" }
-]
+
+  detailedContact = null;
+
+  constructor(private as: AnnuaireService) {
+    this.as.contactDetailedEvent.subscribe(
+      contact => this.detailedContact = contact
+    )
+  }
+
+
 }
 
